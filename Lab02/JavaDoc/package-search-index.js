@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"by.belstu.it.Prename"},{"l":"by.belstu.it.Prename.basejava"}];updateSearchResults();
