@@ -1,0 +1,40 @@
+[
+  {
+    "surname": "Симонов",
+    "name": "Андрей",
+    "age": 20,
+    "salary": 5,
+    "experience": 3
+  },
+  {
+    "surname": "Иванов",
+    "name": "Иван",
+    "age": 28,
+    "salary": 3000,
+    "experience": 6
+  },
+  {
+    "type": "Middle",
+    "surname": "Петров",
+    "name": "Петр",
+    "age": 27,
+    "salary": 4000,
+    "experience": 7
+  },
+  {
+    "type": "Senior",
+    "surname": "Васильев",
+    "name": "Василий",
+    "age": 30,
+    "salary": 4500,
+    "experience": 10
+  },
+  {
+    "type": "Senior",
+    "surname": "Данилевич",
+    "name": "Анастасия",
+    "age": 29,
+    "salary": 4500,
+    "experience": 10
+  }
+]

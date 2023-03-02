@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workerList>
+    <Engineer>
+        <surname>Симонов</surname>
+        <name>Андрей</name>
+        <age>20</age>
+        <salary>5</salary>
+        <experience>3</experience>
+    </Engineer>
+    <SysAdmin>
+        <surname>Иванов</surname>
+        <name>Иван</name>
+        <age>28</age>
+        <salary>3000</salary>
+        <experience>6</experience>
+    </SysAdmin>
+    <Programmer>
+        <surname>Петров</surname>
+        <name>Петр</name>
+        <age>27</age>
+        <salary>4000</salary>
+        <experience>7</experience>
+        <type>ProgType.Middle</type>
+    </Programmer>
+    <Programmer>
+        <surname>Васильев</surname>
+        <name>Василий</name>
+        <age>30</age>
+        <salary>4500</salary>
+        <experience>10</experience>
+        <type>ProgType.Senior</type>
+    </Programmer>
+    <Programmer>
+        <surname>Данилевич</surname>
+        <name>Анастасия</name>
+        <age>29</age>
+        <salary>4500</salary>
+        <experience>10</experience>
+        <type>ProgType.Senior</type>
+    </Programmer>
+</workerList>
