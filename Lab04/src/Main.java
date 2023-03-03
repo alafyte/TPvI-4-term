@@ -1,11 +1,9 @@
 import Company.Company;
-import Staff.Engineer;
-import Staff.ProgType;
-import Staff.Programmer;
-import Staff.SysAdmin;
+import Staff.*;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonParser;
+import com.google.gson.reflect.TypeToken;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
@@ -24,9 +22,12 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
     static {
@@ -85,16 +86,24 @@ public class Main {
         //5. Добавьте методы сериализация и десериализации в JSON файл
         //(используйте любую библиотеку)
         try(FileWriter writer = new FileWriter("json/task5.json", false)) {
-            Gson gson = new GsonBuilder().setPrettyPrinting().create();;
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
             String json = gson.toJson(ITCompany.getStaff());
             writer.write(json);
             writer.flush();
-
-            List<String> lines = Files.readAllLines(Paths.get("json/task5.json"));
-            String text = String.join(System.lineSeparator(), lines);
-            JsonParser parser = new JsonParser();
-            var jsonElement = parser.parse(text);
-            System.out.println(jsonElement);
+        }
+        catch (IOException e){
+            LOG.error(" io error " + e.getMessage());
+        }
+        try {
+            Gson gson = new GsonBuilder().create();
+            Scanner scanner = new Scanner(new File("json/task5-1.json"), "utf-8");
+            String result = "";
+            while (scanner.hasNext()) {
+                result += scanner.nextLine();
+            }
+            scanner.close();
+            var resultObj = gson.fromJson(result, Engineer.class);
+            System.out.println(resultObj.toString());
         }
         catch (IOException e){
             LOG.error(" io error " + e.getMessage());
