@@ -2,10 +2,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+    <title>Lab08-2</title>
 </head>
 <body>
-<h1><%= "Русак Н.А ПОИТ-6/2" %>
+<h1><%= "Фамилия И.О. ПОИТ-6/2" %>
 </h1>
 </body>
 </html>
