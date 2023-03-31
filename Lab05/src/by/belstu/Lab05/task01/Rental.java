@@ -1,4 +1,4 @@
-package by.belstu.Lab04.task01;
+package by.belstu.Lab05.task01;
 
 import static java.lang.Thread.currentThread;
 

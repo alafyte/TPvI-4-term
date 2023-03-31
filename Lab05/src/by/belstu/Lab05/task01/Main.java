@@ -1,4 +1,4 @@
-package by.belstu.Lab04.task01;
+package by.belstu.Lab05.task01;
 
 public class Main {
     public static void main(String[] args) {

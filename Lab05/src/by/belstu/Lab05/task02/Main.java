@@ -1,4 +1,4 @@
-package by.belstu.Lab04.task02;
+package by.belstu.Lab05.task02;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
