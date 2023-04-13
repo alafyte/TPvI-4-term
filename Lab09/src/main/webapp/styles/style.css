@@ -1,0 +1,18 @@
+form input {
+  margin: 10px;
+  border-radius: 10px;
+  height: 30px;
+  font-family: Century, Verdana, sans-serif;
+  background-color: #fff;
+  color: blue;
+}
+a {
+  margin: 10px;
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  font-family: Century, Verdana, sans-serif;
+}
+h1, h2, h3, h4, h5, h6, p, body {
+  margin: 10px;
+}

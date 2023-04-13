@@ -1,0 +1,12 @@
+13.04.2023 22:38:11 [http-listener-1(1)] INFO  by.belstu.lab09.task05.FilterLog  - Logging Filter Servlet called
+13.04.2023 22:38:11 [http-listener-1(1)] INFO  by.belstu.lab09.task05.FilterLog  - =====================================================================
+13.04.2023 22:38:11 [http-listener-1(1)] INFO  by.belstu.lab09.task05.FilterLog  - User Logged! User IP: 0:0:0:0:0:0:0:1 Resource File: /Lab09-1.0-SNAPSHOT/Login Protocol: HTTP/1.1
+13.04.2023 22:38:39 [http-listener-1(4)] INFO  by.belstu.lab09.task05.FilterLog  - Logging Filter Servlet called
+13.04.2023 22:38:39 [http-listener-1(4)] INFO  by.belstu.lab09.task05.FilterLog  - =====================================================================
+13.04.2023 22:38:39 [http-listener-1(4)] INFO  by.belstu.lab09.task05.FilterLog  - User Logged! User IP: 0:0:0:0:0:0:0:1 Resource File: /Lab09-1.0-SNAPSHOT/Login Protocol: HTTP/1.1
+13.04.2023 22:39:28 [http-listener-1(5)] INFO  by.belstu.lab09.task05.FilterLog  - Logging Filter Servlet called
+13.04.2023 22:39:28 [http-listener-1(5)] INFO  by.belstu.lab09.task05.FilterLog  - =====================================================================
+13.04.2023 22:39:28 [http-listener-1(5)] INFO  by.belstu.lab09.task05.FilterLog  - User Logged! User IP: 0:0:0:0:0:0:0:1 Resource File: /Lab09-1.0-SNAPSHOT/Login Protocol: HTTP/1.1
+13.04.2023 22:40:42 [http-listener-1(2)] INFO  by.belstu.lab09.task05.FilterLog  - Logging Filter Servlet called
+13.04.2023 22:40:42 [http-listener-1(2)] INFO  by.belstu.lab09.task05.FilterLog  - =====================================================================
+13.04.2023 22:40:42 [http-listener-1(2)] INFO  by.belstu.lab09.task05.FilterLog  - User Logged! User IP: 0:0:0:0:0:0:0:1 Resource File: /Lab09-1.0-SNAPSHOT/Login Protocol: HTTP/1.1

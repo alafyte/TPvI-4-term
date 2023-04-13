@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
+    <filter>
+        <filter-name>FilterLog</filter-name>
+        <filter-class>by.belstu.lab09.task05.FilterLog</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>FilterLog</filter-name>
+        <url-pattern>/Login</url-pattern>
+    </filter-mapping>
+    <servlet>
+        <servlet-name>ServletFirst</servlet-name>
+        <servlet-class>by.belstu.lab09.task06.ServletFirst</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletFirst</servlet-name>
+        <url-pattern>/ServletFirst</url-pattern>
+    </servlet-mapping>
+</web-app>
