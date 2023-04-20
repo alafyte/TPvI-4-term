@@ -8,15 +8,17 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
+import java.util.Date;
+
 @WebFilter(filterName = "FilterLogin", urlPatterns = {"/MainPage.jsp"},
-        initParams = { @WebInitParam(name = "REGISTER_PATH", value = "/Registration.jsp") })
+        initParams = { @WebInitParam(name = "LOGIN_PATH", value = "/LoginPage.jsp") })
 public class FilterLogin implements Filter {
     private String registerPath;
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException
     {
-        registerPath = filterConfig.getInitParameter("REGISTER_PATH");
+        registerPath = filterConfig.getInitParameter("LOGIN_PATH");
     }
     @Override
     public void doFilter(ServletRequest servletRequest  , ServletResponse servletResponse,
@@ -28,7 +30,11 @@ public class FilterLogin implements Filter {
         if (user == null) {
             HttpServletResponse response = (HttpServletResponse) servletResponse;
             response.sendRedirect(request.getContextPath() + registerPath);
-        } else
+        } else {
+            servletRequest.setAttribute("name", user.getLogin());
+            servletRequest.setAttribute("role", user.getRole());
+            servletRequest.setAttribute("date", new Date());
             filterChain.doFilter(servletRequest, servletResponse);
+        }
     }
 }

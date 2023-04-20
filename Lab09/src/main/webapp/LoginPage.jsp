@@ -5,7 +5,7 @@
     <title>Задание №3</title>
 </head>
 <body>
-<form method="post" action="Login">
+<form method="get" action="Login">
     <input autocomplete="off" type="text" name="login" placeholder="Введите логин"/>
     <br/>
     <input autocomplete="off" type="password" name="password" placeholder="Введите пароль"/>
