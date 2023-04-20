@@ -1,14 +1,14 @@
 package by.belstu.Lab10.classes;
 
-public class Class {
+public class UniversityClass {
     private int classId;
     private String className;
     private String classDay;
     private String classHours;
 
-    public Class() { }
+    public UniversityClass() { }
 
-    public Class(int classId, String className, String classDay, String classHours) {
+    public UniversityClass(int classId, String className, String classDay, String classHours) {
         this.classId = classId;
         this.className = className;
         this.classDay = classDay;

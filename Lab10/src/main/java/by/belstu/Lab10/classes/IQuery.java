@@ -1,4 +1,4 @@
-package by.belstu.Lab10.DAO;
+package by.belstu.Lab10.classes;
 
 import java.sql.ResultSet;
 

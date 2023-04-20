@@ -1,4 +1,4 @@
-package by.belstu.Lab10.DAO;
+package by.belstu.Lab10.classes;
 
 public class User {
     private String login;

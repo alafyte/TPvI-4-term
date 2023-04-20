@@ -1,4 +1,4 @@
-package by.belstu.Lab10.classes;
+package by.belstu.Lab10;
 
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.*;
@@ -15,7 +15,7 @@ public class EncodingFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws ServletException, IOException {
-        request.setCharacterEncoding("Cp1251");
+        request.setCharacterEncoding("UTF-8");
         chain.doFilter(request, response);
     }
 }

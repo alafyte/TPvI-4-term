@@ -1,4 +1,4 @@
-package by.belstu.Lab10.DAO;
+package by.belstu.Lab10.classes;
 
 import java.lang.reflect.InvocationTargetException;
 import java.sql.*;
@@ -66,5 +66,23 @@ public class DAO implements IConnection, IQuery {
         catch (Exception ex) {
             ex.printStackTrace();
         }
+    }
+    public ArrayList<UniversityClass> getClasses() {
+        ArrayList<UniversityClass> timetable = new ArrayList<>();
+        ResultSet rs = ExecuteQuery("select * from Timetable");
+        try {
+            while (rs.next()) {
+                UniversityClass currentUniversityClass = new UniversityClass();
+                currentUniversityClass.setClassId(rs.getInt("ClassId"));
+                currentUniversityClass.setClassName(rs.getString("ClassName"));
+                currentUniversityClass.setClassDay(rs.getString("ClassDay"));
+                currentUniversityClass.setClassHours(rs.getString("ClassHours"));
+                timetable.add(currentUniversityClass);
+            }
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return timetable;
     }
 }

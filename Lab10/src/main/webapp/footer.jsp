@@ -1,16 +1,10 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: blebb
-  Date: 20/04/2023
-  Time: 11:58
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
-    <title>$Title$</title>
-  </head>
-  <body>
-  $END$
-  </body>
+<head>
+</head>
+<body>
+<div id="footer" style="font-size: 15px; width: 100%; position: fixed; top: 96%">
+    Copyright© Roussak Natalya, 2022.
+</div>
+</body>
 </html>
