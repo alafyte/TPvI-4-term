@@ -32,7 +32,7 @@
           for (UniversityClass uc : classes) {
       %>
       <tr>
-        <td><%=uc.getClassId() %></td>
+        <td><%=uc.getClassId()%></td>
         <td><%=uc.getClassName()%></td>
         <td><%=uc.getClassDay()%></td>
         <td><%=uc.getClassHours()%></td>
