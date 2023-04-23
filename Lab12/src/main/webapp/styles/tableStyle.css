@@ -1,0 +1,10 @@
+table {
+    border: 2px solid black;
+    width: 50%;
+    text-align: center;
+    border-spacing: 0;
+    margin: 0 auto 20px auto;
+}
+table td, table th {
+    border: 1px solid black;
+}
