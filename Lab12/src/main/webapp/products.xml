@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<products_list>
+    <rings>
+        <name>Кольцо с бриллиантом из серебра 925 пробы</name>
+        <item_number>3940100</item_number>
+        <metal>Серебро</metal>
+        <weight>1.83</weight>
+        <insert>None</insert>
+        <price>93</price>
+        <old_price>186</old_price>
+    </rings>
+    <rings>
+        <name>Кольцо с бриллиантами из золота 585 пробы</name>
+        <item_number>3940101</item_number>
+        <metal>Золото</metal>
+        <weight>2.53</weight>
+        <insert>Бриллиант</insert>
+        <price>825</price>
+        <old_price>1649</old_price>
+    </rings>
+    <rings>
+        <name>Кольцо с бриллиантами из белого золота</name>
+        <item_number>3940102</item_number>
+        <metal>Белое золото</metal>
+        <weight>1.94</weight>
+        <insert>Бриллиант</insert>
+        <price>2078</price>
+        <old_price>4157</old_price>
+    </rings>
+    <rings>
+        <name>Кольцо с фианитами из золота 585 пробы</name>
+        <item_number>3940103</item_number>
+        <metal>Золото</metal>
+        <weight>2.25</weight>
+        <insert>Фианит</insert>
+        <price>856</price>
+        <old_price>1713</old_price>
+    </rings>
+    <rings>
+        <name>Кольцо с фианитами из золота 585 пробы</name>
+        <item_number>3940104</item_number>
+        <metal>Золото</metal>
+        <weight>2.42</weight>
+        <insert>Фианит</insert>
+        <price>952</price>
+        <old_price>1923</old_price>
+    </rings>
+    <rings>
+        <name>Кольцо с кристаллом из серебра 925 пробы</name>
+        <item_number>3940105</item_number>
+        <metal>Серебро</metal>
+        <weight>1.65</weight>
+        <insert>Кристалл</insert>
+        <price>90</price>
+        <old_price>180</old_price>
+    </rings>
+    <rings>
+        <name>Кольцо с бриллиантами из золота 585 пробы</name>
+        <item_number>3940106</item_number>
+        <metal>Золото</metal>
+        <weight>2.74</weight>
+        <insert>Бриллиант</insert>
+        <price>5787</price>
+        <old_price>11574</old_price>
+    </rings>
+    <rings>
+        <name>Кольцо с фианитами из серебра 925 пробы</name>
+        <item_number>3940107</item_number>
+        <metal>Серебро</metal>
+        <weight>2.29</weight>
+        <insert>Фианит</insert>
+        <price>45</price>
+        <old_price>91</old_price>
+    </rings>
+</products_list>
