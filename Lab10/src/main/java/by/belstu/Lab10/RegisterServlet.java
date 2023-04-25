@@ -1,6 +1,7 @@
 package by.belstu.Lab10;
 
 import by.belstu.Lab10.classes.DAO;
+import by.belstu.Lab10.classes.HashPassword;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
@@ -23,6 +24,7 @@ public class RegisterServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String login = request.getParameter("login");
         String password = request.getParameter("password");
+        Object pass = HashPassword.getHash(password);
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
@@ -37,7 +39,7 @@ public class RegisterServlet extends HttpServlet {
                     out.close();
                 }
                 else {
-                    ResultSet res = db.ExecuteQuery("INSERT INTO Users (User_Login, User_Password, User_Role) VALUES ('" + login + "', '" + password + "','user')");
+                    ResultSet res = db.ExecuteQuery("INSERT INTO Users (User_Login, User_Password, User_Role) VALUES ('" + login + "', '" + pass + "','user')");
                     ShowMessage(out, "Регистрация прошла успешно!", "login.jsp");
                     out.close();
 

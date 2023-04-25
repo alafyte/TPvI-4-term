@@ -1,6 +1,7 @@
 package by.belstu.Lab10;
 
 import by.belstu.Lab10.classes.DAO;
+import by.belstu.Lab10.classes.HashPassword;
 import by.belstu.Lab10.classes.User;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
@@ -28,6 +29,7 @@ public class LoginServlet extends HttpServlet {
 
         String login = request.getParameter("login");
         String password = request.getParameter("password");
+        Object pass = HashPassword.getHash(password);
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
@@ -39,11 +41,11 @@ public class LoginServlet extends HttpServlet {
             request.getRequestDispatcher("/login.jsp").forward(request, response);
         }
 
-        ResultSet rs = db.ExecuteQuery("select count(*)[count] from Users where User_Login = '" + login + "' and User_Password = '" + password + "'");
+        ResultSet rs = db.ExecuteQuery("select count(*)[count] from Users where User_Login = '" + login + "' and User_Password = '" + pass + "'");
         try {
             rs.next();
             if (rs.getInt("count") != 0) {
-                ResultSet userSet = db.ExecuteQuery("select User_Role from Users where User_Login = '" + login + "' and User_Password = '" + password + "'");
+                ResultSet userSet = db.ExecuteQuery("select User_Role from Users where User_Login = '" + login + "' and User_Password = '" + pass + "'");
                 userSet.next();
                 user.setLogin(login);
                 user.setRole(userSet.getString("User_Role"));

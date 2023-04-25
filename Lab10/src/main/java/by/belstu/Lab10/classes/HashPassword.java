@@ -1,4 +1,4 @@
-package by.belstu.lab09.task03.classes;
+package by.belstu.Lab10.classes;
 
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
