@@ -4,7 +4,7 @@
 </head>
 <body>
 <div id="footer" style="font-size: 15px; width: 100%; position: fixed; top: 96%">
-    Copyright© Фамилия Имя Отчество, 2023.
+    Copyright©, 2023.
 </div>
 </body>
 </html>

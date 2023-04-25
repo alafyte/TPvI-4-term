@@ -33,6 +33,7 @@ public class ControllerServlet extends HttpServlet {
         processRequest(request, response);
     }
     private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
         String command = request.getParameter(COMMAND);
         LOGGER.info(COMMAND + " = " + command);
         Command action = CommandFactory.create(command);

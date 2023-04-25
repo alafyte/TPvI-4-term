@@ -25,6 +25,7 @@ public class AddNewClassCommand implements Command {
     @Override
     public CommandResult execute(HttpServletRequest request, HttpServletResponse response)
             throws ServiceException, IncorrectDataException, ServletException, UnsupportedEncodingException {
+        request.setCharacterEncoding("UTF-8");
         UniversityClassService classService = new UniversityClassService();
         Optional<String> newName = Optional.ofNullable(request.getParameter("name"));
         Optional<String> newDay = Optional.ofNullable(request.getParameter("day"));

@@ -52,4 +52,11 @@ public class UniversityClass {
     public void setClassHours(String classHours) {
         this.classHours = classHours;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        UniversityClass uc = (UniversityClass) obj;
+        return uc.getClassDay() == this.getClassDay() && uc.getClassId() == this.getClassId()
+                && uc.getClassHours() == this.getClassHours() && uc.getClassName() == this.getClassName();
+    }
 }
