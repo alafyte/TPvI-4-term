@@ -1,7 +1,7 @@
-package by.belstu.lab13.repository;
+package by.belstu.lab13.Repository.dbconstants;
 
 public enum UserTableConstants {
-    ID("id"),
+    ID("ID"),
     LOGIN("User_Login"),
     PASSWORD("User_Password"),
     ROLE("User_Role");

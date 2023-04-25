@@ -1,4 +1,6 @@
-package by.belstu.lab13.Command;
+package by.belstu.lab13.Command.Factory;
+
+import by.belstu.lab13.Command.*;
 
 public class CommandFactory {
     public static Command create(String command) {
@@ -17,10 +19,7 @@ public class CommandFactory {
                 resultCommand = new SingOutCommand(); break;
             }
             case ADD_NEW_CLASS:{
-                resultCommand = new AddNewPersonCommand(); break;
-            }
-            case DELETE_CLASS:{
-                resultCommand = new DeleteClassCommand(); break;
+                resultCommand = new AddNewClassCommand(); break;
             }
             case LOGIN_PAGE:{
                 resultCommand = new LoginPageCommand(); break;

@@ -1,2 +1,7 @@
-package by.belstu.lab13.repository.paramspecification;public interface Parameter {
+package by.belstu.lab13.Repository.paramspecification;
+
+import java.util.List;
+
+public interface Parameter {
+    List<Object> getParameters();
 }

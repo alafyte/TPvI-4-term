@@ -1,4 +1,4 @@
-package by.belstu.lab13.repository;
+package by.belstu.lab13.Repository.dbconstants;
 
 public enum UnivClassTableConstants {
     ID("ClassId"),

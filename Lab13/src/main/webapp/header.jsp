@@ -4,7 +4,7 @@
 </head>
 <body>
 <div id="head" style="position: fixed; top: 1%; font-size: 23px; margin: 5px; font-weight: bold; height: 80px">
-  Добро пожаловать, ${name}!
+  Добро пожаловать, ${NAME}!
 </div>
 </body>
 </html>

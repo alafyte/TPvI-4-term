@@ -6,9 +6,9 @@
 </head>
 <body>
 <div class="session">
-  <form method="get" action="LoginServlet" class="log-in" autocomplete="off">
+  <form method="post" action="${pageContext.servletContext.contextPath}/controller?command=login" class="log-in" autocomplete="off">
     <h4>Вход</h4>
-    <p>${ErrorMessage}</p>
+    <p>${errorMessage}</p>
     <div class="floating-label">
       <input placeholder="Логин" name="login" id="email" autocomplete="off">
       <label for="email">Логин</label>

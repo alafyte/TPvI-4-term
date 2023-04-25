@@ -1,7 +1,5 @@
-<%@ page import="by.belstu.Lab10.classes.DAO" %>
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="by.belstu.Lab10.classes.UniversityClass" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
   <title>Admin page</title>
@@ -24,44 +22,28 @@
       </thead>
 
       <tbody>
-      <%
-        try {
-          DAO db = new DAO();
-          db.getConnection();
-          ArrayList<UniversityClass> classes = new ArrayList<>(db.getClasses());
-          for (UniversityClass uc : classes) {
-      %>
+      <c:forEach items="${classes}" var="cl">
       <tr>
-        <td><%=uc.getClassId()%></td>
-        <td><%=uc.getClassName()%></td>
-        <td><%=uc.getClassDay()%></td>
-        <td><%=uc.getClassHours()%></td>
+        <td>${cl.getClassId()}</td>
+        <td>${cl.getClassName()}</td>
+        <td>${cl.getClassDay()}</td>
+        <td>${cl.getClassHours()}</td>
       </tr>
-      <%
-          }
-        } catch (Exception e) {
-          e.printStackTrace();
-        }
-      %>
+      </c:forEach>
       </tbody>
     </table>
   </div>
 
 
   <div id="add-remove-div">
-    <form id="add-form" method="post" action="MainServlet">
+    <form id="add-form" method="post" action="${pageContext.servletContext.contextPath}/controller?command=add_new_class">
       <h3 style="font-weight: bold">Добавить занятие</h3>
-      <input type="text" placeholder="Название" name="name" autocomplete="off"/>
-      <input type="text" placeholder="День недели" name="day" autocomplete="off"/>
-      <input type="text" placeholder="Время" name="hours" autocomplete="off"/>
+      <input type="text" placeholder="Название" name="name"/>
+      <input type="text" placeholder="День недели" name="day"/>
+      <input type="text" placeholder="Время" name="hours"/>
       <button type="submit">Добавить</button>
     </form>
     <br/><br/>
-    <form id="remove-form" method="get" action="MainServlet">
-      <h3 style="font-weight: bold">Удалить занятие</h3>
-      <input type="text" placeholder="ID" name="id" autocomplete="off"/>
-      <button type="submit">Удалить</button>
-    </form>
   </div>
 
 </div>

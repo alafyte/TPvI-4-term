@@ -1,16 +1,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-  <title>Login</title>
+  <title>Register</title>
   <link href="styles/login.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div class="session">
-  <form method="post" action="RegisterServlet" class="log-in" autocomplete="off">
+  <form method="post" action="${pageContext.servletContext.contextPath}/controller?command=register_new_user" class="log-in" autocomplete="off">
     <h4>Регистрация</h4>
-    <p>${ErrorMessage}</p>
+    <p>${errorRegister}</p>
     <div class="floating-label">
-      <input placeholder="Логин" name="login" id="email" autocomplete="off">
+      <input placeholder="Логин" name="newLoginName" id="email" autocomplete="off">
       <label for="email">Логин</label>
       <div class="icon">
         <?xml version="1.0" encoding="UTF-8"?>
@@ -27,7 +27,7 @@
       </div>
     </div>
     <div class="floating-label">
-      <input placeholder="Пароль" type="password" name="password" id="password" autocomplete="off">
+      <input placeholder="Пароль" type="password" name="newPassword" id="password" autocomplete="off">
       <label for="password">Пароль</label>
       <div class="icon">
 

@@ -1,11 +1,11 @@
-package by.belstu.lab13;
+package by.belstu.lab13.Filters;
 
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
 
-@WebFilter(filterName = "EncodingFilter", urlPatterns = {"/*"})
+@WebFilter(filterName = "EncodingFilter", urlPatterns = {"/controller"})
 public class EncodingFilter implements Filter {
     public void init(FilterConfig config) throws ServletException {
     }

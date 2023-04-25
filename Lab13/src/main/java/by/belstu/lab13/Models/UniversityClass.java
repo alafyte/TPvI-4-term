@@ -1,4 +1,4 @@
-package by.belstu.lab13.classes;
+package by.belstu.lab13.Models;
 
 public class UniversityClass {
     private int classId;
@@ -10,6 +10,12 @@ public class UniversityClass {
 
     public UniversityClass(int classId, String className, String classDay, String classHours) {
         this.classId = classId;
+        this.className = className;
+        this.classDay = classDay;
+        this.classHours = classHours;
+    }
+
+    public UniversityClass(String className, String classDay, String classHours) {
         this.className = className;
         this.classDay = classDay;
         this.classHours = classHours;

@@ -1,8 +1,22 @@
-package by.belstu.lab13.classes;
+package by.belstu.lab13.Models;
 
 public class User {
     private String login;
-    private String role;
+    private byte[] password;
+    private String role = "user";
+
+    public User(String login, byte[] password) {
+        this.login = login;
+        this.password = password;
+    }
+
+    public byte[] getPassword() {
+        return password;
+    }
+
+    public void setPassword(byte[] password) {
+        this.password = password;
+    }
 
     public String getLogin() {
         return login;
