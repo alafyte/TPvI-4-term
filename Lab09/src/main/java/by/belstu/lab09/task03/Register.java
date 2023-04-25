@@ -1,12 +1,14 @@
 package by.belstu.lab09.task03;
 
 import by.belstu.lab09.task03.classes.DAO;
+import by.belstu.lab09.task03.classes.HashPassword;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.charset.StandardCharsets;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -23,6 +25,7 @@ public class Register extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String login = request.getParameter("login");
         String password = request.getParameter("password");
+        Object pass = HashPassword.getHash(password);
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
@@ -35,7 +38,7 @@ public class Register extends HttpServlet {
                     ShowMessage(out, "Пользователь с таким логином уже сущестует", "Registration.jsp");
                 }
                 else {
-                    ResultSet res = db.ExecuteQuery("INSERT INTO Users (User_Login, User_Password, User_Role) VALUES ('" + login + "', '" + password + "','user')");
+                    ResultSet res = db.ExecuteQuery("INSERT INTO Users (User_Login, User_Password, User_Role) VALUES ('" + login + "', '" + pass + "','user')");
                     ShowMessage(out, "Регистрация прошла успешно!", "LoginPage.jsp");
                     out.close();
 

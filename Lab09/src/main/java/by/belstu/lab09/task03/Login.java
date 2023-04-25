@@ -1,6 +1,7 @@
 package by.belstu.lab09.task03;
 
 import by.belstu.lab09.task03.classes.DAO;
+import by.belstu.lab09.task03.classes.HashPassword;
 import by.belstu.lab09.task03.classes.User;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
@@ -8,6 +9,7 @@ import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.charset.StandardCharsets;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
@@ -28,16 +30,17 @@ public class Login extends HttpServlet {
 
         String login = request.getParameter("login");
         String password = request.getParameter("password");
+        Object pass = HashPassword.getHash(password);
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
         out.println("<html><body>");
 
-        ResultSet rs = db.ExecuteQuery("select count(*)[count] from Users where User_Login = '" + login + "' and User_Password = '" + password + "'");
+        ResultSet rs = db.ExecuteQuery("select count(*)[count] from Users where User_Login = '" + login + "' and User_Password = '" + pass + "'");
         try {
             rs.next();
             if (rs.getInt("count") != 0) {
-                ResultSet userSet = db.ExecuteQuery("select User_Role from Users where User_Login = '" + login + "' and User_Password = '" + password + "'");
+                ResultSet userSet = db.ExecuteQuery("select User_Role from Users where User_Login = '" + login + "' and User_Password = '" + pass + "'");
                 userSet.next();
                 user.setLogin(login);
                 user.setRole(userSet.getString("User_Role"));
@@ -75,4 +78,5 @@ public class Login extends HttpServlet {
         out.println("</body></html>");
         out.close();
     }
+
 }
