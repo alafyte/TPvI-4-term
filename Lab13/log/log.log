@@ -26,3 +26,26 @@
 2023-04-25 19:11:34 INFO  LoginCommand:45 - user has been authorized: login:Optional[admin] password:Optional[admin]
 2023-04-25 19:11:34 INFO  ControllerServlet:38 - command = welcome
 2023-04-25 19:11:34 INFO  ConnectionPool:86 - Connection was released, the are free connection 5
+2023-04-28 14:59:40 INFO  LoginRequiredFilter:21 - Filter is working command= login
+2023-04-28 14:59:40 INFO  ControllerServlet:38 - command = login
+2023-04-28 14:59:43 INFO  ConnectionPool:86 - Connection was released, the are free connection 5
+2023-04-28 14:59:43 INFO  LoginCommand:45 - user has been authorized: login:Optional[admin] password:Optional[admin]
+2023-04-28 14:59:43 INFO  ControllerServlet:38 - command = welcome
+2023-04-28 14:59:43 INFO  ConnectionPool:86 - Connection was released, the are free connection 5
+2023-04-28 16:21:21 INFO  LoginRequiredFilter:21 - Filter is working command= login
+2023-04-28 16:21:21 INFO  ControllerServlet:38 - command = login
+2023-04-28 16:21:23 INFO  ConnectionPool:86 - Connection was released, the are free connection 5
+2023-04-28 16:21:23 INFO  LoginCommand:45 - user has been authorized: login:Optional[admin] password:Optional[admin]
+2023-04-28 16:21:23 INFO  ControllerServlet:38 - command = welcome
+2023-04-28 16:21:23 INFO  ConnectionPool:86 - Connection was released, the are free connection 5
+2023-04-28 16:34:14 INFO  LoginRequiredFilter:21 - Filter is working command= login
+2023-04-28 16:34:14 INFO  ControllerServlet:38 - command = login
+2023-04-28 16:34:14 INFO  ConnectionPool:86 - Connection was released, the are free connection 5
+2023-04-28 16:34:14 INFO  LoginCommand:45 - user has been authorized: login:Optional[admin] password:Optional[admin]
+2023-04-28 16:34:14 INFO  ControllerServlet:38 - command = welcome
+2023-04-28 16:34:14 INFO  ConnectionPool:86 - Connection was released, the are free connection 5
+2023-04-28 16:34:28 INFO  LoginRequiredFilter:21 - Filter is working command= add_new_class
+2023-04-28 16:34:28 INFO  ControllerServlet:38 - command = add_new_class
+2023-04-28 16:34:28 INFO  AbstractRepository:76 - SQLServerPreparedStatement:5
+2023-04-28 16:34:28 INFO  ConnectionPool:86 - Connection was released, the are free connection 5
+2023-04-28 16:34:28 INFO  ConnectionPool:86 - Connection was released, the are free connection 5
