@@ -1,4 +1,4 @@
-package by.belstu.lab14.pubsub.task1;
+package by.belstu.lab14.pubsub.task13;
 
 import com.sun.messaging.ConnectionConfiguration;
 import com.sun.messaging.ConnectionFactory;
@@ -8,11 +8,13 @@ import javax.jms.*;
 public class Receiver1 implements MessageListener {
     private ConnectionFactory factory = new ConnectionFactory();
     private JMSConsumer consumer;
+    private int Client_Id = 0;
 
     Receiver1() {
         try (JMSContext context = factory.createContext("admin", "admin", JMSContext.AUTO_ACKNOWLEDGE )) {
             factory.setProperty(ConnectionConfiguration.imqAddressList,
                     "mq://127.0.0.1:7676, mq://127.0.0.1:7676");
+            context.setClientID(String.valueOf((Client_Id++)));
             Destination weatherInfo = context.createTopic("PubSubTopic");
             consumer = context.createDurableConsumer((Topic)weatherInfo, "DurableConsumer");
             consumer.setMessageListener(this);

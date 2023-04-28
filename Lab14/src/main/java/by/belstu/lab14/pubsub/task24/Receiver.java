@@ -1,4 +1,4 @@
-package by.belstu.lab14.pubsub.task234;
+package by.belstu.lab14.pubsub.task24;
 
 import com.sun.messaging.ConnectionConfiguration;
 import com.sun.messaging.ConnectionFactory;
