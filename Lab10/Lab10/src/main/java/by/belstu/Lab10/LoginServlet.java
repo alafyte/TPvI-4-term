@@ -53,6 +53,7 @@ public class LoginServlet extends HttpServlet {
             }
             else {
                 request.setAttribute("ErrorMessage", "Пользователя не существует");
+                request.getRequestDispatcher("/login.jsp").forward(request, response);
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
