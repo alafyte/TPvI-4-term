@@ -25,7 +25,6 @@ public class Register extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String login = request.getParameter("login");
         String password = request.getParameter("password");
-        Object pass = HashPassword.getHash(password);
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
@@ -38,7 +37,7 @@ public class Register extends HttpServlet {
                     ShowMessage(out, "Пользователь с таким логином уже сущестует", "Registration.jsp");
                 }
                 else {
-                    ResultSet res = db.ExecuteQuery("INSERT INTO Users (User_Login, User_Password, User_Role) VALUES ('" + login + "', '" + pass + "','user')");
+                    db.addUser(login, password);
                     ShowMessage(out, "Регистрация прошла успешно!", "LoginPage.jsp");
                     out.close();
 

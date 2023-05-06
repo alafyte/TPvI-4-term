@@ -58,6 +58,27 @@ public class DAO implements IConnection, IQuery {
             return null;
         }
     }
+    public void addUser(String login, String password) throws SQLException {
+        String query = "insert into Users (User_Login, User_Password, User_Role) values (?, ?, ?)";
+        PreparedStatement statement = con.prepareStatement(query);
+        statement.setString(1, login);
+        statement.setBytes(2, HashPassword.getHash(password));
+        statement.setString(3, "user");
+        statement.executeUpdate();
+        statement.close();
+    }
+    public ResultSet checkUser(String login, String password) throws SQLException {
+        PreparedStatement statement = con.prepareStatement("select * from Users where User_Login = ?");
+        statement.setString(1, login);
+        return statement.executeQuery();
+    }
+    public ResultSet checkUsersCount(String login, String password) throws SQLException {
+        PreparedStatement statement = con.prepareStatement(
+                "select count(*)[count] from Users where User_Login = ? and User_Password = ?");
+        statement.setString(1, login);
+        statement.setBytes(2, HashPassword.getHash(password));
+        return statement.executeQuery();
+    }
     public void closeConnection()
     {
         try {
