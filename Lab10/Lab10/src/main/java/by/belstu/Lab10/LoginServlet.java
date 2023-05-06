@@ -29,7 +29,6 @@ public class LoginServlet extends HttpServlet {
 
         String login = request.getParameter("login");
         String password = request.getParameter("password");
-        Object pass = HashPassword.getHash(password);
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
@@ -41,11 +40,11 @@ public class LoginServlet extends HttpServlet {
             request.getRequestDispatcher("/login.jsp").forward(request, response);
         }
 
-        ResultSet rs = db.ExecuteQuery("select count(*)[count] from Users where User_Login = '" + login + "' and User_Password = '" + pass + "'");
         try {
+            ResultSet rs = db.checkUsersCount(login, password);
             rs.next();
             if (rs.getInt("count") != 0) {
-                ResultSet userSet = db.ExecuteQuery("select User_Role from Users where User_Login = '" + login + "' and User_Password = '" + pass + "'");
+                ResultSet userSet = db.checkUser(login, password);
                 userSet.next();
                 user.setLogin(login);
                 user.setRole(userSet.getString("User_Role"));

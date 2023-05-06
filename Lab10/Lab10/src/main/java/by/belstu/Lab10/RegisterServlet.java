@@ -8,6 +8,7 @@ import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -24,7 +25,6 @@ public class RegisterServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String login = request.getParameter("login");
         String password = request.getParameter("password");
-        Object pass = HashPassword.getHash(password);
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
@@ -39,7 +39,7 @@ public class RegisterServlet extends HttpServlet {
                     out.close();
                 }
                 else {
-                    ResultSet res = db.ExecuteQuery("INSERT INTO Users (User_Login, User_Password, User_Role) VALUES ('" + login + "', '" + pass + "','user')");
+                    db.addUser(login, password);
                     ShowMessage(out, "Регистрация прошла успешно!", "login.jsp");
                     out.close();
 
