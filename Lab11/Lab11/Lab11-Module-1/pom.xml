@@ -10,7 +10,7 @@
     </parent>
 
     <groupId>by.belstu.Lab11.Module</groupId>
-    <artifactId>Lab11-Module</artifactId>
+    <artifactId>Lab11-Module-1</artifactId>
 
     <properties>
         <maven.compiler.source>19</maven.compiler.source>

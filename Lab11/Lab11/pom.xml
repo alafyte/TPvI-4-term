@@ -9,7 +9,8 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
-        <module>Lab11-Module</module>
+        <module>Lab11-Module-1</module>
+        <module>Lab11-Module-2</module>
     </modules>
 
     <properties>
