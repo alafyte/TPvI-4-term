@@ -46,7 +46,7 @@ public class LoginServlet extends HttpServlet {
             if (rs.getInt("count") != 0) {
                 ResultSet userSet = db.checkUser(login, password);
                 userSet.next();
-                user.setLogin(login);
+                user.setLogin(userSet.getString("User_Login"));
                 user.setRole(userSet.getString("User_Role"));
                 isUserFound = true;
             }
