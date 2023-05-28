@@ -1,4 +1,4 @@
-package by.belstu.Lab05.task01;
+package by.belstu.Lab05.task01.Rental;
 
 public class Retiree extends Thread {
     Rental rental;

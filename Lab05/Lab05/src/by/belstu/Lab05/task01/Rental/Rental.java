@@ -1,4 +1,4 @@
-package by.belstu.Lab05.task01;
+package by.belstu.Lab05.task01.Rental;
 
 import static java.lang.Thread.currentThread;
 
