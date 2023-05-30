@@ -6,6 +6,7 @@ public class Client extends Thread {
     Client(Rental rental){
         this.rental = rental;
     }
+    @Override
     public void run() {
         rental.get();
     }

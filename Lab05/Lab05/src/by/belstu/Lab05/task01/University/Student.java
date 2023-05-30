@@ -41,7 +41,7 @@ public class Student extends Thread {
         this.initialDoor = initialDoor;
         this.university = university;
     }
-
+    @Override
     public void run() {
         university.useDoor(this);
     }

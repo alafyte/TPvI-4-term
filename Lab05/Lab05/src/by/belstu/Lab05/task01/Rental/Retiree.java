@@ -6,7 +6,7 @@ public class Retiree extends Thread {
     Retiree(Rental rental) {
         this.rental = rental;
     }
-
+    @Override
     public void run() {
         rental.getRetiree();
     }

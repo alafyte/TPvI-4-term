@@ -3,6 +3,9 @@ package by.belstu.Lab05.task01.University;
 import static java.lang.Thread.currentThread;
 
 public class University {
+    public static final String RESET = "\u001B[0m";
+    public static final String RED = "\u001B[31m";
+    public static final String GREEN = "\u001B[32m";
     private boolean firstDoor = true;
     private boolean secondDoor = true;
 
@@ -36,14 +39,16 @@ public class University {
                             throw new InterruptedException();
                         }
                         if (System.currentTimeMillis() > end) {
-                            System.out.println("Студент " + student.getStudentName() + " поменял(а) дверь");
+                            System.out.println(RED + "Студент " + student.getStudentName() + " поменял(а) дверь"
+                                    + RESET);
                             student.setInitialDoor(2);
                             useDoor(student);
                         }
                     }
                     catch(InterruptedException e) {
                         String action = student.isLeaving() ? "вышел(а)" : "зашел(а)";
-                        System.out.println("Студент " + student.getStudentName() + " " + action + " через дверь 1");
+                        System.out.println(GREEN + "Студент " + student.getStudentName() + " " + action
+                                + " через дверь 1" + RESET);
                     }
                 }
                 case 2 -> {
@@ -68,14 +73,16 @@ public class University {
                             throw new InterruptedException();
                         }
                         if (System.currentTimeMillis() > end) {
-                            System.out.println("Студент " + student.getStudentName() + " поменял(а) дверь");
+                            System.out.println(RED + "Студент " + student.getStudentName() + " поменял(а) дверь"
+                                    + RESET);
                             student.setInitialDoor(1);
                             useDoor(student);
                         }
                     }
                     catch(InterruptedException e) {
                         String action = student.isLeaving() ? "вышел(а)" : "зашел(а)";
-                        System.out.println("Студент " + student.getStudentName() + " " + action + " через дверь 2");
+                        System.out.println(GREEN + "Студент " + student.getStudentName() + " " + action
+                                + " через дверь 2" + RESET);
                     }
                 }
             }
