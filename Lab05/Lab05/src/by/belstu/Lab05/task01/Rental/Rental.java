@@ -3,10 +3,14 @@ package by.belstu.Lab05.task01.Rental;
 import static java.lang.Thread.currentThread;
 
 public class Rental {
+    public static final String RESET = "\u001B[0m";
+    public static final String RED = "\u001B[31m";
+    public static final String GREEN = "\u001B[32m";
+    public static final String BLUE = "\u001B[34m";
     private int product = 0;
     long start = System.currentTimeMillis();
 
-    public void get() {
+    public void get(Client client) {
         System.out.println("Клиент подошел");
         synchronized (this) {
             while (product < 1) {
@@ -17,37 +21,29 @@ public class Rental {
                 }
             }
 
-            long end = start + 10000;
+            long end = start + 3000;
 
             try {
-                while (System.currentTimeMillis() < end) {
+                if (System.currentTimeMillis() <= end) {
                     System.out.println("Клиент ждет");
                     currentThread().sleep(1000);
-                    while (product < 1) {
-                        try {
-                            wait();
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                    }
                     product--;
-                    System.out.println("Клиент взял 1 лыжи");
+                    System.out.println(GREEN + "Клиент взял 1 лыжи" + RESET);
                     System.out.println("Лыж на складе: " + product);
                     notify();
+                    return;
                 }
-                if (System.currentTimeMillis() > end) {
-                    currentThread().interrupt();
-                    throw new InterruptedException();
-                }
+                notify();
+                System.out.println(RED + "Клиент ушел" + RESET);
 
             } catch (InterruptedException e) {
-                System.out.println("Клиент ушел");
+                //e.printStackTrace();
             }
         }
     }
 
 
-    public void getRetiree() {
+    public void getRetiree(Retiree retiree) {
         System.out.println("Пенсионер подошел");
 
         synchronized (this) {
@@ -59,49 +55,30 @@ public class Rental {
                 }
             }
             try {
-                currentThread().sleep(500);
+                retiree.sleep(500);
             } catch (InterruptedException e) {
                 //e.printStackTrace();
             }
 
             product--;
-            System.out.println("Пенсионер взял 1 лыжи");
+            System.out.println(BLUE + "Пенсионер взял 1 лыжи" + RESET);
             System.out.println("Лыж на складе: " + product);
             notify();
-
-            try {
-                throw new InterruptedException();
-            } catch (InterruptedException e) {
-                currentThread().interrupt();
-            }
         }
     }
 
 
     public synchronized void put() {
-        long start = System.currentTimeMillis();
-        long end = start + 6000;
-
-        while (product >= 2) {
+        while (product >= 3) {
             try {
                 wait();
             } catch (InterruptedException e) {
-                //e.printStackTrace();
             }
         }
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            //e.printStackTrace();
-        }
-
         product++;
         System.out.println("Работник добавил 1 пару лыж");
         System.out.println("Лыж на складе: " + product);
         notify();
-
-        if (System.currentTimeMillis() > end)
-            currentThread().interrupt();
     }
 
 }

@@ -28,7 +28,7 @@ public class Shower {
             checkCurrentGender(person.getGender());
             currentPeopleNumber++;
             System.out.println(GREEN + person.getPersonName() + " зашел(а) в душ. " +
-                    "Кол-во людей в душе: " + currentPeopleNumber + ", текущий пол: " + currentGender + RESET);
+                    "Кол-во людей в душе: " + currentPeopleNumber + ", текущий пол: " + currentGender.getGender() + RESET);
         }
 
         // Время у каждого разное
@@ -42,7 +42,7 @@ public class Shower {
         synchronized (this) {
             person.interrupt();
             currentPeopleNumber--;
-            System.out.println(BLUE + person.getPersonName() + " закончил(а) принимать душ. Кол-во людей: "
+            System.out.println(BLUE + person.getPersonName() + " закончил(а) принимать душ. Кол-во людей в душе: "
                     + currentPeopleNumber + RESET);
             notifyAll();
         }

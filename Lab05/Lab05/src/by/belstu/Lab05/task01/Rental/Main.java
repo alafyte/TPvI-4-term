@@ -10,7 +10,7 @@ public class Main {
             Worker worker = new Worker(rental);
             worker.start();
 
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < 4; i++)
                 new Client(rental).start();
 
 

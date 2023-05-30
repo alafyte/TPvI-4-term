@@ -26,7 +26,7 @@ public class University {
                         }
                     }
                     try {
-                        while (System.currentTimeMillis() < end) {
+                        if (System.currentTimeMillis() <= end) {
                             try {
                                 firstDoor = false;
                                 Thread.sleep(1000);
@@ -60,7 +60,7 @@ public class University {
                         }
                     }
                     try {
-                        while (System.currentTimeMillis() < end) {
+                        if (System.currentTimeMillis() <= end) {
                             try {
                                 secondDoor = false;
                                 Thread.sleep(1000);

@@ -8,6 +8,6 @@ public class Retiree extends Thread {
     }
     @Override
     public void run() {
-        rental.getRetiree();
+        rental.getRetiree(this);
     }
 }
