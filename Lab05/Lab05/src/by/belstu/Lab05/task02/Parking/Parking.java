@@ -1,4 +1,4 @@
-package by.belstu.Lab05.task02;
+package by.belstu.Lab05.task02.Parking;
 
 public class Parking extends Thread{
     private final int parkingId;
