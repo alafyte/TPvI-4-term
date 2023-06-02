@@ -23,27 +23,24 @@ public class CallCenter {
                     throw new RuntimeException(e);
                 }
             }
-        }
-        if (System.currentTimeMillis() > end) {
-            int option = new Random().nextInt(2) + 1;
-            switch (option) {
-                case 1 -> {
-                    System.out.println(RED + "Клиент " + client.getClientName() + " отключился" + RESET);
-                    return;
-                }
-                case 2 -> {
-                    System.out.println(RED + "Клиент " + client.getClientName() + " отключился" + RESET);
-                    try {
-                        Thread.sleep(2000);
-                    } catch (InterruptedException e) {
-                        throw new RuntimeException(e);
+            if(System.currentTimeMillis() > end) {
+                int option = new Random().nextInt(2) + 1;
+                switch (option) {
+                    case 1 -> {
+                        System.out.println(RED + "Клиент " + client.getClientName() + " отключился" + RESET);
+                        return;
                     }
-                    System.out.println(GREEN + "Клиент " + client.getClientName() + " перезванивает");
+                    case 2 -> {
+                        System.out.println(RED + "Клиент " + client.getClientName() + " отключился" + RESET);
+                        try {
+                            Thread.sleep(2000);
+                        } catch (InterruptedException e) {
+                            throw new RuntimeException(e);
+                        }
+                        System.out.println(GREEN + "Клиент " + client.getClientName() + " перезванивает");
+                    }
                 }
             }
-        }
-
-        synchronized (this) {
             currentNumberOfClients++;
             int operatorId = getFreeOperator();
             clients[operatorId] = client;
