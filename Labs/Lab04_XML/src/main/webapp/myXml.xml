@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<cards>
+    <card id="1">
+        <name>Andrey</name>
+        <number>375292996740</number>
+        <sum>10000</sum>
+    </card>
+    <card id="2">
+        <name>Anna</name>
+        <number>375298924811</number>
+        <sum>10000</sum>
+    </card>
+</cards>
